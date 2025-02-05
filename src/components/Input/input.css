@@ -34,7 +34,8 @@
     transition: 0.3s;
   }
   .btn:hover {
-    background-color: floralwhite;
+    /* background-color: floralwhite; */
+    background-color: green;
     opacity: 1;
     cursor: pointer;
   }
