@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/context/AuthContext";
@@ -15,18 +16,16 @@ export default function App() {
     return savedNotes;
   });
 
-  // Load categories and selectedCategory from localStorage or set defaults
+  // Ensure "General" is always present in categories
   const [categories, setCategories] = useState(() => {
-    const savedCategories = JSON.parse(localStorage.getItem("categories")) || ["General"];
-    return savedCategories;
+    const savedCategories = JSON.parse(localStorage.getItem("categories")) || [];
+    return savedCategories.includes("General") ? savedCategories : ["General", ...savedCategories];
   });
 
   const [selectedCategory, setSelectedCategory] = useState(() => {
-    const savedCategory = localStorage.getItem("selectedCategory") || "All";
-    return savedCategory;
+    return localStorage.getItem("selectedCategory") || "All";
   });
 
-  // Define searchText and setSearchText state variables
   const [searchText, setSearchText] = useState("");
 
   // Save notes to localStorage
@@ -44,21 +43,45 @@ export default function App() {
     localStorage.setItem("selectedCategory", selectedCategory);
   }, [selectedCategory]);
 
+  // Handle adding a note
   const handleText = (txt, category) => {
     let data = new Date();
+    let assignedCategory = category === "All" || !category ? "General" : category; // Default to "General"
+
     let newText = {
       id: nanoid(),
       text: txt,
-      category: category === "All" ? "General" : category,
+      category: assignedCategory,
       date: data.toLocaleDateString(),
       time: `${data.getHours()}:${data.getMinutes()}:${data.getSeconds()}`
     };
+
     setList([...list, newText]);
+
+    // Ensure "General" category is always available
+    if (!categories.includes("General")) {
+      setCategories(["General", ...categories]);
+    }
   };
 
-  const handleDelet = (id) => {
-    const updatedList = list.filter((val) => val.id !== id);
-    setList(updatedList);
+  // Handle note deletion
+  const handleDelete = (id) => {
+    setList((prevList) => prevList.filter((note) => note.id !== id));
+  };
+
+  // Handle category deletion
+  const handleDeleteCategory = (category) => {
+    // Prevent deletion of "General"
+    if (category === "General") return;
+
+    // Remove notes under the deleted category
+    const updatedNotes = list.filter((note) => note.category !== category);
+    setList(updatedNotes);
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+
+    // Update category list
+    const updatedCategories = categories.filter((cat) => cat !== category);
+    setCategories(updatedCategories);
   };
 
   return (
@@ -71,19 +94,20 @@ export default function App() {
             element={
               <PrivateRoute>
                 <div className="App">
-                  <CategoryFilter 
-                    categories={categories} 
-                    setCategories={setCategories} 
-                    selectedCategory={selectedCategory} 
-                    setSelectedCategory={setSelectedCategory} 
+                  <CategoryFilter
+                    categories={categories}
+                    setCategories={setCategories}
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
+                    handleDeleteCategory={handleDeleteCategory}
                   />
                   <Search setSearchText={setSearchText} />
-                  <Notelist 
-                    textFun={handleText} 
-                    nodeList={list} 
-                    handleDelet={handleDelet} 
-                    searchText={searchText} 
-                    selectedCategory={selectedCategory} 
+                  <Notelist
+                    textFun={handleText}
+                    nodeList={list}
+                    handleDelet={handleDelete}
+                    searchText={searchText}
+                    selectedCategory={selectedCategory}
                     categories={categories}
                     setSelectedCategory={setSelectedCategory}
                   />

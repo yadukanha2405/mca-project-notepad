@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import "./categoryFilter.css";
 
-const CategoryFilter = ({ categories, setCategories, selectedCategory, setSelectedCategory }) => {
+const CategoryFilter = ({ categories, setCategories, selectedCategory, setSelectedCategory, handleDeleteCategory }) => {
   const [newCategory, setNewCategory] = useState("");
 
   const handleAddCategory = () => {
     if (newCategory.trim() !== "" && newCategory !== "All" && !categories.includes(newCategory)) {
-      setCategories([...categories, newCategory]);
+      const updatedCategories = [...categories, newCategory];
+      setCategories(updatedCategories);
+      localStorage.setItem("categories", JSON.stringify(updatedCategories));
       setNewCategory("");
+    }
+  };
+
+  const handleDelete = (category) => {
+    if (window.confirm(`Are you sure you want to delete the "${category}" category?`)) {
+      handleDeleteCategory(category);
     }
   };
 
@@ -21,15 +29,21 @@ const CategoryFilter = ({ categories, setCategories, selectedCategory, setSelect
         All
       </button>
 
-      {/* Dynamic Category Buttons */}
-      {categories.map((category, index) => (
-        <button
-          key={index}
-          className={`category-btn ${selectedCategory === category ? "active" : ""}`}
-          onClick={() => setSelectedCategory(category)}
-        >
-          {category}
-        </button>
+      {/* Dynamic Category Buttons with Hover Delete Cross */}
+      {categories
+        .filter((category) => category !== "All") // Hide "All" from the list
+        .map((category, index) => (
+          <div key={index} className="category-wrapper">
+            <button
+              className={`category-btn ${selectedCategory === category ? "active" : ""}`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+            {category !== "General" && (
+              <span className="delete-cross" onClick={() => handleDelete(category)}>✖</span>
+            )}
+          </div>
       ))}
 
       {/* Input to Add New Category */}

@@ -1,0 +1,77 @@
+/* Centering the Auth Container */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Title Styling */
+.auth-container h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Input Field Styling */
+.auth-container input {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Focus Effect */
+.auth-container input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Button Styling */
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+/* Button Hover Effect */
+.auth-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Error Message Styling */
+.error {
+    color: red !important; /* Ensures the error message is clearly red */
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Toggle Sign-up/Login Text */
+.auth-container p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect on Toggle Text */
+.auth-container p:hover {
+    color: #007bff;
+}
