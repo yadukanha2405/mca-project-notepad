@@ -50,3 +50,4 @@ const Input = ({ textFun, categories, selectedCategory, setSelectedCategory }) =
 };
 
 export default Input;
+

@@ -30,3 +30,4 @@ const Notelist = ({ textFun, nodeList, handleDelet, searchText, selectedCategory
 };
 
 export default Notelist;
+
