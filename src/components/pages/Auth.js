@@ -13,14 +13,14 @@ const Auth = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("Invalid email or password. Please try again.");
+    setError("");
     try {
       if (isSignup) {
         await signup(email, password);
       } else {
         await login(email, password);
       }
-      navigate("/"); // Redirect to home page after successful login/signup
+      navigate("/notepad"); // Redirect to main page after successful login/signup
     } catch (err) {
       setError(err.message);
     }

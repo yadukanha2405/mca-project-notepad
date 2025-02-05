@@ -1,10 +1,10 @@
-
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/context/AuthContext";
 import PrivateRoute from "./components/pages/PrivateRoute";
 import { nanoid } from "nanoid";
 import Auth from "./components/pages/Auth";
+import Home from "./components/Home/Home"; 
 import Notelist from "./components/Notelist/Notelist";
 import Search from "./components/Search/Search";
 import CategoryFilter from "./components/CategoryFilter/CategoryFilter";
@@ -71,15 +71,12 @@ export default function App() {
 
   // Handle category deletion
   const handleDeleteCategory = (category) => {
-    // Prevent deletion of "General"
-    if (category === "General") return;
+    if (category === "General") return; // Prevent deletion of "General"
 
-    // Remove notes under the deleted category
     const updatedNotes = list.filter((note) => note.category !== category);
     setList(updatedNotes);
     localStorage.setItem("notes", JSON.stringify(updatedNotes));
 
-    // Update category list
     const updatedCategories = categories.filter((cat) => cat !== category);
     setCategories(updatedCategories);
   };
@@ -88,9 +85,10 @@ export default function App() {
     <AuthProvider>
       <Router>
         <Routes>
+          <Route path="/" element={<Home />} /> {/* Home Page */}
           <Route path="/auth" element={<Auth />} />
           <Route
-            path="/"
+            path="/notepad"
             element={
               <PrivateRoute>
                 <div className="App">
@@ -120,3 +118,4 @@ export default function App() {
     </AuthProvider>
   );
 }
+
