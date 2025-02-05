@@ -1,0 +1,21 @@
+.search-container {
+    width: 99%;
+    background-color: rgba(233, 224, 224, 0.932);
+    display: flex;
+ 
+    align-content: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  
+  input {
+    width: 90%;
+    border: none;
+    padding: 5px;
+    background-color: rgba(233, 224, 224, 0.884);
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  

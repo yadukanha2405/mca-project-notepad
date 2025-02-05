@@ -1,0 +1,13 @@
+.main {
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+  }
+  
+  .notelist-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  

@@ -1,0 +1,43 @@
+.category-container {
+    /* display: flex; */
+    display: flex ;
+   flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+  
+  .category-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .category-btn.active {
+    background-color: #0056b3;
+  }
+  
+  .category-input {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .category-input input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .category-input button {
+    padding: 5px 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
