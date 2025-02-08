@@ -1,36 +1,267 @@
-/* home.css */
-.home-container {
-    text-align: center;
-    padding: 50px;
-    background-color: #f5f5f5;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+General Styling
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  padding: 15px 20px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: url('https://source.unsplash.com/1600x900/?notes,desk') center/cover;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 123, 255, 0.7);
+  z-index: 1;
+}
+
+.hero h1,
+.hero p,
+.hero .get-started-btn {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+
+
+/* General Button Styling */
+.login-btn,
+.get-started-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.login-btn:hover,
+.get-started-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #0056b3, #003d80);
+  box-shadow: 0 6px 12px rgba(0, 91, 187, 0.5);
+}
+
+/* Gradient Pulse Animation */
+.login-btn::before,
+.get-started-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 50%);
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.login-btn:hover::before,
+.get-started-btn:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Active Effect (Click Effect) */
+.login-btn:active,
+.get-started-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 6px rgba(0, 91, 187, 0.4);
+}
+
+
+/* Features Section */
+.features {
+  text-align: center;
+  padding: 70px 20px;
+  background: white;
+}
+
+.features h2 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.feature {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+  color: #007bff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.cta {
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta .get-started-btn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: white;
+  color: #007bff;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.cta .get-started-btn:hover {
+  background: #ffffff;
+  color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
   }
-  
-  h1 {
-    color: #007bff;
+
+  .hero p {
+    font-size: 1.1rem;
   }
-  
-  p {
-    font-size: 18px;
-    color: #555;
+
+  .features h2,
+  .cta h2 {
+    font-size: 2rem;
   }
-  
-  .get-started-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
+
+  .feature {
+    width: 100%;
   }
-  
-  .get-started-btn:hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+
+
+
+/* Logo and Title Wrapper */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+  height: 65px; 
+  width: 65px;
+  border-radius: 50%; 
+  margin-right: 10px;
+  border: 2px solid white; 
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h2 {
+  font-size: 24px;
+  color: #333;
+}

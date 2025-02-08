@@ -56,7 +56,7 @@
 
 /* Error Message Styling */
 .error {
-    color: red !important; /* Ensures the error message is clearly red */
+    color: red !important; 
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;

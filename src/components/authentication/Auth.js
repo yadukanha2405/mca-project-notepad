@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "./AuthContext";
 import { useNavigate } from "react-router-dom"; // Import the useNavigate hook
-import "../pages/auth.css";
+import "./auth.css";
 
 const Auth = () => {
   const { login, signup } = useAuth();
@@ -20,7 +20,7 @@ const Auth = () => {
       } else {
         await login(email, password);
       }
-      navigate("/notepad"); // Redirect to main page after successful login/signup
+      navigate("/notepad"); 
     } catch (err) {
       setError(err.message);
     }

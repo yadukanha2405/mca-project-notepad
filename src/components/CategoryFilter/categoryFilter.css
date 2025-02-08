@@ -8,41 +8,49 @@
 } 
 
 /* Ensuring equal button size */
-.category-btn {
-  padding: 10px 20px; /* Ensures consistent padding */
-  min-width: 120px; /* Set a minimum width for uniform size */
-  text-align: center; /* Centers the text */
+.category-btn, 
+.category-input button {
+  padding: 10px 20px; /* Consistent padding */
+  min-width: 120px; /* Uniform width */
+  text-align: center;
   border: none;
   border-radius: 5px;
   background-color: #007bff;
   color: white;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .category-btn.active {
   background-color: #0056b3;
 }
 
-/* Input field for adding new category */
+/* Input field for adding a new category */
 .category-input {
   display: flex;
   gap: 5px;
+  align-items: center;
 }
 
 .category-input input {
-  padding: 5px;
+  padding: 10px 15px; /* Same padding as button */
+  min-width: 120px; /* Same width as buttons */
+  font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
+/* Add button - same size as category buttons */
 .category-input button {
-  padding: 5px 10px;
   background-color: green;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  font-weight: bold;
+}
+
+.category-input button:hover {
+  background-color: darkgreen;
 }
 
 /* Category wrapper for buttons */

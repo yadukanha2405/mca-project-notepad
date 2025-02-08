@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./components/context/AuthContext";
-import PrivateRoute from "./components/pages/PrivateRoute";
+import { AuthProvider } from "./components/authentication/AuthContext";
+import PrivateRoute from "./components/authentication/PrivateRoute";
 import { nanoid } from "nanoid";
-import Auth from "./components/pages/Auth";
+import Auth from "./components/authentication/Auth";
 import Home from "./components/Home/Home"; 
 import Notelist from "./components/Notelist/Notelist";
 import Search from "./components/Search/Search";
