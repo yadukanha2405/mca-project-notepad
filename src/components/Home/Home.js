@@ -7,13 +7,16 @@ import logo from "../../assets/logo.webp";
 const Home = () => {
   return (
     <div className="home-container">
-      <header className="navbar">
-        <div className="logo-container">
-          <img src={logo} alt="i-Noteplus Logo" className="logo" />
-          <h2>i-Noteplus</h2>
-        </div>
-        <Link to="/auth" className="login-btn">Login / Sign Up</Link>
-      </header>
+    <header className="navbar">
+  <div className="logo-container">
+    <img src={logo} alt="i-Noteplus Logo" className="logo" />
+    <div className="app-title">
+      <h2>i-Notepad Plus</h2>
+      <span>– A Secure and User-Friendly Online Note-Taking Application</span>
+    </div>
+  </div>
+  <Link to="/auth" className="login-btn">Login / Sign Up</Link>
+</header>
 
       <section className="hero">
         <h1>Welcome to i-Noteplus</h1>

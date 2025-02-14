@@ -1,3 +1,4 @@
+/* Category Container */
 .category-container {
   display: flex;
   flex-wrap: wrap;
@@ -5,44 +6,53 @@
   margin-bottom: 15px;
   justify-content: center;
   align-items: center;
-} 
+  padding: 10px;
+}
 
-/* Ensuring equal button size */
+/* Category Buttons */
 .category-btn, 
 .category-input button {
-  padding: 10px 20px; /* Consistent padding */
-  min-width: 120px; /* Uniform width */
+  padding: 10px 20px;
+  min-width: 120px;
   text-align: center;
   border: none;
   border-radius: 5px;
   background-color: #007bff;
   color: white;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s, transform 0.2s;
   font-size: 16px;
   font-weight: bold;
+}
+
+/* Hover & Active States */
+.category-btn:hover,
+.category-input button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 .category-btn.active {
   background-color: #0056b3;
 }
 
-/* Input field for adding a new category */
+/* Input Field */
 .category-input {
   display: flex;
   gap: 5px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .category-input input {
-  padding: 10px 15px; /* Same padding as button */
-  min-width: 120px; /* Same width as buttons */
+  padding: 10px 15px;
+  min-width: 120px;
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-/* Add button - same size as category buttons */
+/* Add Button */
 .category-input button {
   background-color: green;
   color: white;
@@ -53,13 +63,13 @@
   background-color: darkgreen;
 }
 
-/* Category wrapper for buttons */
+/* Category Wrapper */
 .category-wrapper {
   position: relative;
   display: inline-block;
 }
 
-/* Delete cross icon */
+/* Delete Cross Icon */
 .delete-cross {
   position: absolute;
   top: -5px;
@@ -75,8 +85,50 @@
   text-align: center;
   cursor: pointer;
   display: none;
+  transition: background 0.3s;
 }
 
 .category-wrapper:hover .delete-cross {
   display: block;
+}
+
+.delete-cross:hover {
+  background-color: darkred;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .category-container {
+    gap: 8px;
+  }
+
+  .category-btn, 
+  .category-input button, 
+  .category-input input {
+    min-width: 100px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-btn, 
+  .category-input button, 
+  .category-input input {
+    min-width: 80px;
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .delete-cross {
+    width: 14px;
+    height: 14px;
+    font-size: 10px;
+    padding: 2px;
+  }
 }

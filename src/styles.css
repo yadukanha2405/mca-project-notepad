@@ -1,3 +1,7 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital@0;1&display=swap");
+
+/* Global Styling */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,21 +9,52 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7fc;
+  color: #333;
 }
 
+/* Code Styling */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-@import url("https://fonts.googleapis.com/css2?family=Tinos:ital@0;1&display=swap");
 
+/* App Container */
 .App {
   font-family: "Tinos", serif;
   text-align: center;
   max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   height: auto;
-  padding-top: 15px;
-  padding-right: 15px;
+  padding: 15px;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .App {
+    max-width: 90%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    max-width: 95%;
+    padding: 8px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  body {
+    font-size: 14px;
+  }
 }

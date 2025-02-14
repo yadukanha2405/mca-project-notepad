@@ -1,38 +1,80 @@
+
+
+   /* Note Container */
 .container {
-    margin: 0;
-    padding: 1rem;
-    min-height: 170px;
-    border-radius: 8px;
-    background-color: #f3f32df3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    overflow: hidden;
+  margin: 0;
+  padding: 1rem;
+  min-height: 170px;
+  border-radius: 8px;
+  background-color: #f3f32df3; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect for Container */
+.container:hover {
+  background-color: #f7f79e;
+}
+
+/* Scrollable Text */
+.container > p {
+  max-height: 120px; /* Limits height */
+  overflow-y: hidden;
+  transition: 0.3s;
+}
+
+/* Show Scroll on Hover */
+.container > p:hover {
+  overflow-y: auto;
+}
+
+/* Flexbox for Child Elements */
+.child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Child Div Alignment */
+.child > div {
+  min-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Note Category Label */
+.note-category {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 0.8rem;
+    min-height: 150px;
   }
-  .container > p:hover {
-    overflow-y: scroll;
-  }
+
   .child {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
   }
-  
-  .child > div {
-    min-width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
+
   .note-category {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 12px;
     padding: 5px;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 8px;
   }
-  
+}

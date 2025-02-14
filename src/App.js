@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import Notelist from "./components/Notelist/Notelist";
 import Search from "./components/Search/Search";
 import CategoryFilter from "./components/CategoryFilter/CategoryFilter";
+import Headerr from "./components/Header/Headerr";
 import "./styles.css";
 
 export default function App() {
@@ -85,13 +86,14 @@ export default function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} /> {/* Home Page */}
+          <Route path="/" element={<Home />} /> 
           <Route path="/auth" element={<Auth />} />
           <Route
             path="/notepad"
             element={
               <PrivateRoute>
                 <div className="App">
+                
                   <CategoryFilter
                     categories={categories}
                     setCategories={setCategories}

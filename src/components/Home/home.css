@@ -1,4 +1,4 @@
-General Styling
+/* General Styling */
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -18,13 +18,39 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar h2 {
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: bold;
-  letter-spacing: 1px;
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
+/* Logo Styling */
+.logo {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid white;
+}
+
+/* App Title */
+.app-title {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main App Name */
+.app-title h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Subtitle */
+.app-title span {
+  font-size: 14px;
+  font-weight: normal;
+  color: #f0f0f0;
+}
 
 /* Hero Section */
 .hero {
@@ -62,10 +88,7 @@ body {
 .hero p {
   font-size: 1.4rem;
   margin-top: 10px;
-  opacity: 0.9;
 }
-
-
 
 /* General Button Styling */
 .login-btn,
@@ -78,51 +101,22 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
-  border: none;
-  cursor: pointer;
   text-align: center;
   font-size: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
 }
 
-/* Hover Effect */
+/* Hover & Active Effects */
 .login-btn:hover,
 .get-started-btn:hover {
   transform: scale(1.08);
   background: linear-gradient(135deg, #0056b3, #003d80);
-  box-shadow: 0 6px 12px rgba(0, 91, 187, 0.5);
 }
 
-/* Gradient Pulse Animation */
-.login-btn::before,
-.get-started-btn::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 50%);
-  transition: all 0.4s ease-out;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0);
-}
-
-.login-btn:hover::before,
-.get-started-btn:hover::before {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-/* Active Effect (Click Effect) */
 .login-btn:active,
 .get-started-btn:active {
   transform: scale(0.95);
-  box-shadow: 0 3px 6px rgba(0, 91, 187, 0.4);
 }
-
 
 /* Features Section */
 .features {
@@ -132,7 +126,6 @@ body {
 }
 
 .features h2 {
-  color: #333;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -165,12 +158,6 @@ body {
   margin-bottom: 10px;
 }
 
-.feature p {
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
 /* CTA Section */
 .cta {
   text-align: center;
@@ -194,14 +181,11 @@ body {
   font-size: 1.2rem;
   background: white;
   color: #007bff;
-  font-weight: bold;
-  transition: 0.3s ease-in-out;
 }
 
 .cta .get-started-btn:hover {
   background: #ffffff;
   color: #0056b3;
-  transform: scale(1.05);
 }
 
 /* Footer */
@@ -215,53 +199,82 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-container {
+    flex-direction: column;
+  }
+
+  .app-title h2 {
+    font-size: 24px;
+  }
+
+  .app-title span {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 50px 15px;
+  }
+
   .hero h1 {
     font-size: 2.2rem;
   }
 
   .hero p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
-  .features h2,
-  .cta h2 {
+  .features h2 {
     font-size: 2rem;
   }
 
   .feature {
     width: 100%;
   }
+  
+  .cta h2 {
+    font-size: 2rem;
+  }
 }
 
+@media (max-width: 480px) {
+  .logo {
+    height: 50px;
+    width: 50px;
+  }
 
+  .app-title h2 {
+    font-size: 20px;
+  }
 
+  .app-title span {
+    font-size: 11px;
+  }
 
-/* Logo and Title Wrapper */
-.logo-container {
-  display: flex;
-  align-items: center;
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .login-btn,
+  .get-started-btn {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
 }
 
-/* Logo Styling */
-.logo {
-  height: 65px; 
-  width: 65px;
-  border-radius: 50%; 
-  margin-right: 10px;
-  border: 2px solid white; 
-}
-
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  background: #f8f9fa;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar h2 {
-  font-size: 24px;
-  color: #333;
-}

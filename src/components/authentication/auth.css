@@ -5,25 +5,27 @@
     margin: 50px auto;
     padding: 30px;
     background: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
     text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Title Styling */
 .auth-container h2 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #333;
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: bold;
 }
 
 /* Input Field Styling */
 .auth-container input {
-    width: 90%;
+    width: 100%;
     padding: 12px;
-    margin: 8px 0;
+    margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 16px;
     transition: all 0.3s ease-in-out;
 }
@@ -39,27 +41,31 @@
 .auth-container button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
     margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Button Hover Effect */
 .auth-container button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    transform: scale(1.05);
 }
 
 /* Error Message Styling */
 .error {
-    color: red !important; 
+    color: red;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 /* Toggle Sign-up/Login Text */
@@ -74,4 +80,25 @@
 /* Hover Effect on Toggle Text */
 .auth-container p:hover {
     color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 20px;
+    }
+
+    .auth-container h2 {
+        font-size: 22px;
+    }
+
+    .auth-container input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .auth-container button {
+        font-size: 14px;
+        padding: 10px;
+    }
 }

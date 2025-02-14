@@ -1,67 +1,107 @@
+/* Input Container */
 .input-container {
-    background-color: aquamarine;
-    margin: 0;
-    padding: 1rem;
-    /* width: 250px; */
-    min-height: 170px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background-color: #5fe0c4; /* Softer aquamarine */
+  padding: 1rem;
+  min-height: 170px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+/* Hover effect for container */
+.input-container:hover {
+  background-color: #4ac7ae;
+}
+
+/* Textarea */
+textarea {
+  background-color: transparent;
+  border: none;
+  resize: none;
+  font-size: 1rem;
+  padding: 5px;
+  color: #333;
+}
+
+/* Remove outline on focus */
+textarea:focus {
+  outline: none;
+}
+
+/* Input Bottom Section */
+.input-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Button */
+.btn {
+  width: 4rem;
+  padding: 0.3rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff; /* Changed to blue */
+  color: white;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+/* Button Hover */
+.btn:hover {
+  background-color: #0056b3; /* Darker blue */
+  cursor: pointer;
+}
+
+/* Button Active (Click Effect) */
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Category Dropdown */
+.category-dropdown {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+/* Dropdown Hover & Focus */
+.category-dropdown:hover,
+.category-dropdown:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Note Category Label */
+.note-category {
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .input-container {
+    padding: 0.8rem;
+    min-height: 150px;
   }
-  
-  textarea {
-    background-color: aquamarine;
-    border: none;
-    resize: none;
-  }
-  
-  textarea:focus {
-    outline: none;
-  }
-  
-  .input-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
+
   .btn {
-    width: 4rem;
-    padding: 0.3rem;
-    border-radius: 8px;
-    border: none;
-    transition: 0.3s;
+    width: 3.5rem;
+    font-size: 0.9rem;
   }
-  .btn:hover {
-    /* background-color: floralwhite; */
-    background-color: green;
-    opacity: 1;
-    cursor: pointer;
-  }
-  
+
   .category-dropdown {
-    width: 100%;
-    margin-top: 8px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: white;
+    font-size: 0.9rem;
   }
-  
-  .category-dropdown {
-    width: 100%;
-    margin-bottom: 8px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: white;
-  }
-  
-  .note-category {
-    font-size: 12px;
-    font-weight: bold;
-    color: #555;
-    margin-top: 5px;
-    display: block;
-  }
+}
