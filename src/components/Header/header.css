@@ -17,7 +17,31 @@
     flex-direction: column;
   }
   
+  .login-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
+  /* Hover & Active Effects */
+.login-btn:hover,
+.get-started-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #0056b3, #003d80);
+}
+
+.login-btn:active,
+.get-started-btn:active {
+  transform: scale(0.95);
+}
 
 .logout-btn {
     background: linear-gradient(135deg, #ff4d4d, #b30000);
@@ -56,11 +80,26 @@
     padding: 15px 20px;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   
   }
 
 
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
   /* Logo Styling */
-.logo {
+  .logo {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid white;
+  }
+
+  /* Logo Styling
+/* .logo {
     height: 65px;
     width: 65px;
     border-radius: 50%;
@@ -76,7 +115,7 @@
   .logo-container {
     display: flex;
     align-items: center;
-  }
+  } */ */
 
   @media (max-width: 768px) {
     .navbar {

@@ -23,7 +23,7 @@ const Headerr = () => {
       </div>
       {location.pathname === "/notepad" ? (
         <button className="logout-btn" onClick={handleLogout}>Logout</button>
-      ) : (
+      ) : location.pathname === "/auth" ? "" : (
         <Link to="/auth" className="login-btn">Login / Sign Up</Link>
       )}
     </header>

@@ -7,50 +7,17 @@ body {
   color: #333;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  padding: 15px 20px;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 
-.logo-container {
-  display: flex;
-  align-items: center;
-}
 
-/* Logo Styling */
-.logo {
-  height: 65px;
-  width: 65px;
-  border-radius: 50%;
-  margin-right: 10px;
-  border: 2px solid white;
-}
 
-/* App Title */
-.app-title {
-  display: flex;
-  flex-direction: column;
-}
 
-/* Main App Name */
-.app-title h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0;
-}
 
-/* Subtitle */
-.app-title span {
-  font-size: 14px;
-  font-weight: normal;
-  color: #f0f0f0;
-}
+
+
+
+
+
+
 
 /* Hero Section */
 .hero {
@@ -91,7 +58,7 @@ body {
 }
 
 /* General Button Styling */
-.login-btn,
+
 .get-started-btn {
   display: inline-block;
   background: linear-gradient(135deg, #007bff, #0056b3);
@@ -107,13 +74,13 @@ body {
 }
 
 /* Hover & Active Effects */
-.login-btn:hover,
+
 .get-started-btn:hover {
   transform: scale(1.08);
   background: linear-gradient(135deg, #0056b3, #003d80);
 }
 
-.login-btn:active,
+
 .get-started-btn:active {
   transform: scale(0.95);
 }
@@ -199,22 +166,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .logo-container {
-    flex-direction: column;
-  }
-
-  .app-title h2 {
-    font-size: 24px;
-  }
-
-  .app-title span {
-    font-size: 12px;
-  }
 
   .hero {
     padding: 50px 15px;
@@ -242,18 +194,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .logo {
-    height: 50px;
-    width: 50px;
-  }
-
-  .app-title h2 {
-    font-size: 20px;
-  }
-
-  .app-title span {
-    font-size: 11px;
-  }
+ 
 
   .hero {
     padding: 40px 10px;
@@ -267,7 +208,7 @@ footer {
     font-size: 1rem;
   }
 
-  .login-btn,
+  
   .get-started-btn {
     font-size: 14px;
     padding: 10px 15px;
@@ -277,4 +218,3 @@ footer {
     font-size: 1rem;
   }
 }
-

@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
-import logo from "../../assets/logo.webp";
+import logo from "../../assets/logo.webp"
 
 
 const Home = () => {
   return (
     <div className="home-container">
-    <header className="navbar">
+     
+    {/* <header className="navbar">
   <div className="logo-container">
     <img src={logo} alt="i-Noteplus Logo" className="logo" />
     <div className="app-title">
@@ -16,7 +17,7 @@ const Home = () => {
     </div>
   </div>
   <Link to="/auth" className="login-btn">Login / Sign Up</Link>
-</header>
+</header> */}
 
       <section className="hero">
         <h1>Welcome to i-Noteplus</h1>
