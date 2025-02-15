@@ -1,6 +1,6 @@
 /* Input Container */
 .input-container {
-  background-color: #5fe0c4; /* Softer aquamarine */
+  background-color: #5fe0c4; 
   padding: 1rem;
   min-height: 170px;
   border-radius: 8px;
@@ -44,7 +44,7 @@ textarea:focus {
   padding: 0.3rem;
   border-radius: 8px;
   border: none;
-  background-color: #007bff; /* Changed to blue */
+  background-color: #007bff; 
   color: white;
   font-weight: bold;
   transition: 0.3s ease-in-out;
@@ -52,7 +52,7 @@ textarea:focus {
 
 /* Button Hover */
 .btn:hover {
-  background-color: #0056b3; /* Darker blue */
+  background-color: #0056b3; 
   cursor: pointer;
 }
 

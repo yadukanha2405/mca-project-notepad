@@ -1,6 +1,4 @@
-
-
-   /* Note Container */
+ /* Note Container */
 .container {
   margin: 0;
   padding: 1rem;
@@ -24,7 +22,7 @@
 
 /* Scrollable Text */
 .container > p {
-  max-height: 120px; /* Limits height */
+  max-height: 120px; 
   overflow-y: hidden;
   transition: 0.3s;
 }

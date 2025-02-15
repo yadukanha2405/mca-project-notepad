@@ -98,24 +98,7 @@
     border: 2px solid white;
   }
 
-  /* Logo Styling
-/* .logo {
-    height: 65px;
-    width: 65px;
-    border-radius: 50%;
-    margin-right: 10px;
-    border: 2px solid white;
-  }
 
-  
-  .logo-container {
-    flex-direction: column;
-  }
-
-  .logo-container {
-    display: flex;
-    align-items: center;
-  } */ */
 
   @media (max-width: 768px) {
     .navbar {
