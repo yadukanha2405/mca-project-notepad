@@ -46,7 +46,7 @@ const Home = () => {
       </section>
 
       <footer>
-        <p>© {new Date().getFullYear()} i-Noteplus | All Rights Reserved</p>
+        <p>© {new Date().getFullYear()} i-Noteplus | All Rights Reserved | Developed by Kanhaiya Yadav</p>
       </footer>
     </div>
   );
